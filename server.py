@@ -15,24 +15,26 @@ def emotion_analyzer():
     # Pass the text to the sentiment_analyzer function and store the response
     response = emotion_detector(text_to_analyze)
 
-    # Extract the label and score from the response
-    anger = response['anger']
-    disgust = response['disgust']
-    fear = response['fear']
-    joy = response['joy']
-    sadness = response['sadness']
-    dominant_emotion = response['dominant_emotion']
-
-    # Return the extracted emotions as a string to display in the HTML
-    return f"""
+    if response == None:
+        
+        return "Invalid input! Try again."
+    else:
+         # Extract the label and score from the response
+        anger = response['anger']
+        disgust = response['disgust']
+        fear = response['fear']
+        joy = response['joy']
+        sadness = response['sadness']
+        dominant_emotion = response['dominant_emotion']
+        # Return the extracted emotions as a string to display in the HTML
+        return f"""
         Anger: {anger}<br>
         Disgust: {disgust}<br>
         Fear: {fear}<br>
         Joy: {joy}<br>
         Sadness: {sadness}<br>
         Dominant Emotion: {dominant_emotion.capitalize()}
-    """
-    
+        """
 
 @app.route("/")
 # Renders the HTML page
