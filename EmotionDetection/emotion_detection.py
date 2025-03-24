@@ -28,10 +28,10 @@ def emotion_detector(text_to_analyze, document_key="raw_document"):
 
     # Returning a dictionary containing emotion analysis results
     return {
-        "anger": emotion_scores["anger"],
-        "disgust": emotion_scores["disgust"],
-        "fear": emotion_scores["fear"],
-        "joy": emotion_scores["joy"],
-        "sadness": emotion_scores["sadness"],
-        "dominant_emotion": dominant_emotion
+        'anger': emotion_scores["anger"],
+        'disgust': emotion_scores["disgust"],
+        'fear': emotion_scores["fear"],
+        'joy': emotion_scores["joy"],
+        'sadness': emotion_scores["sadness"],
+        'dominant_emotion': dominant_emotion
     }
